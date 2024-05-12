@@ -55,3 +55,46 @@ header {
   max-width: 2em;
   min-width: 30px;
 }
+
+/*||MAIN*/
+main {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 60px;
+}
+
+/*||LOGO*/
+.game_logo {
+  align-items: center;
+  color: #f1e5db;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 540px;
+}
+
+.game_logo img {
+  filter: invert(100%) sepia(75%) saturate(6350%) hue-rotate(330deg) brightness(115%) contrast(110%);
+  max-width: 500px;
+  min-width: 75px;
+  width: 4em;
+}
+
+.logo_title {
+  color: #f1e5db;
+  filter: drop-shadow(2px 2px 30px #eeff88);
+  font-family: "Tilt Neon", sans-serif;
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.logo_subtitle {
+  color: #ed3;
+  font-size: 2em;
+  margin: 0.2em;
+}
+
+.logo_description {
+  font-style: italic;
+}
