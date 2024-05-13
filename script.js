@@ -13,7 +13,12 @@ function createSketch(unit) {
     divUnit.className = 'canvas_unit';
     divUnit.style.height = pixels;
     divUnit.style.width = pixels;
+    divUnit.addEventListener('mouseover', drawSketch)
 
     canvas.appendChild(divUnit);
   }
+}
+
+function drawSketch() {
+  this.className = 'draw'
 }

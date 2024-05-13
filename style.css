@@ -121,6 +121,10 @@ main {
   background-color: #f1e5db;
 }
 
+.draw {
+  background-color: #111;
+}
+
 /*||TOOLS*/
 ul {
   list-style: none;
