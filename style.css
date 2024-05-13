@@ -98,3 +98,34 @@ main {
 .logo_description {
   font-style: italic;
 }
+
+/*||GAME*/
+.game_container {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+/*||CANVAS*/
+.game_canvas {
+  border: 5px solid #ff0370;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 820px;
+  padding: 5px;
+  width: 820px;
+}
+
+.canvas_unit {
+  background-color: #f1e5db;
+}
+
+/*||TOOLS*/
+ul {
+  list-style: none;
+}
+
+.game_tools {
+  flex: 1;
+}
