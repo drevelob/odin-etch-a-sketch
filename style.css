@@ -107,13 +107,17 @@ main {
 }
 
 /*||CANVAS*/
-.game_canvas {
+.game_canvas,
+.game_tools {
   border: 5px solid #ff0370;
   border-radius: 10px;
   display: flex;
+  padding: 5px;
+}
+
+.game_canvas {
   flex-wrap: wrap;
   height: 820px;
-  padding: 5px;
   width: 820px;
 }
 
@@ -131,5 +135,8 @@ ul {
 }
 
 .game_tools {
+  align-items: center;
+  flex-direction: column;
   flex: 1;
+  gap: 20px;
 }
