@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 </head>
+
 <body>
   <header>
     <div class="header_logo">
@@ -37,6 +39,27 @@
       <aside class="game_tools">
         <p id="icon" class="game_icon">٩(◕‿◕)۶</p>
         <button class="tool_grid">Grid</button>
+        <dialog class="grid_modal">
+          <form method="dialog">
+            <p>
+              <label>
+                Grid Resolution
+                <input type="number"
+                       class="modal_input"
+                       name="resolution"
+                       min="8"
+                       max="128"
+                       value=""
+                       placeholder=""
+                       required>
+              </label>
+            </p>
+            <div>
+              <button class="modal_confirm" value="">Confirm</button>
+              <button class="modal_close">Close</button>
+            </div>
+          </form>
+        </dialog>
         <p class="game_instrutions">
           Grid button generate new canvas with costume size.
           <br>
@@ -59,4 +82,5 @@
 
   <footer></footer>
 </body>
+
 </html>

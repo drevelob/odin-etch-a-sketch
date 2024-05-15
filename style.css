@@ -140,3 +140,9 @@ ul {
   flex: 1;
   gap: 20px;
 }
+
+/*||GRID BUTTON*/
+/*||MODAL*/
+.grid_modal {
+  margin: auto;
+}
