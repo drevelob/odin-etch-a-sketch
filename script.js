@@ -1,7 +1,10 @@
 const canvas = document.querySelector('.game_canvas');
 const gridBtn = document.querySelector('.tool_grid');
 let resolution = 32;
-let sketch = createSketch(resolution);
+
+createSketch(resolution);
+canvas.addEventListener('click', setDrawOnOff);
+gridBtn.addEventListener('click', displayModal);
 
 function createSketch(unit) {
   const size = unit ** 2;
@@ -14,8 +17,7 @@ function createSketch(unit) {
     divUnit.className = 'canvas_unit';
     divUnit.style.height = pixels;
     divUnit.style.width = pixels;
-    divUnit.addEventListener('mouseover', drawSketch)
-
+    canvas.value = false;
     canvas.appendChild(divUnit);
   }
 }
@@ -24,7 +26,17 @@ function drawSketch() {
   this.className = 'draw'
 }
 
-gridBtn.addEventListener('click', displayModal);
+function setDrawOnOff() {
+  const divUnits = canvas.querySelectorAll('div');
+
+  if (canvas.value) {
+    divUnits.forEach((u) => u.removeEventListener('mouseover', drawSketch));
+    canvas.value = false;
+  } else {
+    divUnits.forEach((u) => u.addEventListener('mouseover', drawSketch));
+    canvas.value = true;
+  }
+}
 
 function displayModal() {
   const gridModal = document.querySelector('.grid_modal');
