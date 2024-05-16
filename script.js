@@ -31,12 +31,34 @@ function createSketch(unit) {
 }
 
 function drawSketch() {
+  const FILTER = [
+    'saturate(1) brightness(1)',
+    'saturate(1.15) brightness(0.85)',
+    'saturate(1.3) brightness(0.7)',
+    'saturate(1.5) brightness(0.5)'
+  ];
   this.className = pencilColor;
+
+  switch (this.style.filter) {
+    case FILTER[0]:
+      this.style.filter = FILTER[1];
+      break;
+    case FILTER[1]:
+      this.style.filter = FILTER[2];
+      break;
+    case FILTER[2]:
+      this.style.filter = FILTER[3];
+      break;
+    case FILTER[3]:
+      break;
+    default:
+      this.style.filter = FILTER[0];
+      break;
+  }
 }
 
 function setDrawOnOff() {
   const divUnits = canvas.querySelectorAll('div');
-
 
   if (canvas.value) {
     divUnits.forEach((unit) => {
