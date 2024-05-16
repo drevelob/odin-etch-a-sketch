@@ -125,10 +125,6 @@ main {
   background-color: #f1e5db;
 }
 
-.draw {
-  background-color: #111;
-}
-
 /*||TOOLS*/
 ul {
   list-style: none;
@@ -145,4 +141,58 @@ ul {
 /*||MODAL*/
 .grid_modal {
   margin: auto;
+}
+
+/*||PENCILS*/
+.tool_pencil {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.tool_pencil::before {
+  content: 'Colors';
+  text-align: center;
+  width: 100%;
+}
+
+li {
+  border: 2px solid #f1e5db;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.pencil_black {
+  background-color: #111;
+}
+
+.pencil_purple {
+  background-color: #681ae5;
+}
+
+.pencil_blue {
+  background-color: #1a61e5;
+}
+
+.pencil_red {
+  background-color: #df1451;
+}
+
+.pencil_green {
+  background-color: #1ae590;
+}
+
+.pencil_orange {
+  background-color: #e59e1a;
+}
+
+.pencil_yellow {
+  background-color: #e5e911;
+}
+
+.pencil_pink {
+  background-color: #de60f4;
 }
