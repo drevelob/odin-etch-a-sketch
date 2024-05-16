@@ -1,6 +1,7 @@
 const canvas = document.querySelector('.game_canvas');
 const gridBtn = document.querySelector('.tool_grid');
 const colors = document.querySelectorAll('.tool_pencil li');
+const clearBtn = document.querySelector('.tool_clear');
 let resolution = 32;
 let pencilColor = 'pencil_black';
 
@@ -10,6 +11,7 @@ gridBtn.addEventListener('click', displayModal);
 colors.forEach((col) => {
   col.addEventListener('click', setColor);
 });
+clearBtn.addEventListener('click', clearCanvas);
 
 function createSketch(unit) {
   const size = unit ** 2;
@@ -22,6 +24,7 @@ function createSketch(unit) {
     divUnit.className = 'canvas_unit';
     divUnit.style.height = pixels;
     divUnit.style.width = pixels;
+    divUnit.addEventListener('click', drawSketch);
     canvas.value = false;
     canvas.appendChild(divUnit);
   }
@@ -34,13 +37,16 @@ function drawSketch() {
 function setDrawOnOff() {
   const divUnits = canvas.querySelectorAll('div');
 
+
   if (canvas.value) {
     divUnits.forEach((unit) => {
+      unit.addEventListener('click', drawSketch);
       unit.removeEventListener('mouseover', drawSketch);
     });
     canvas.value = false;
   } else {
     divUnits.forEach((unit) => {
+      unit.removeEventListener('click', drawSketch);
       unit.addEventListener('mouseover', drawSketch);
     });
     canvas.value = true;
@@ -79,4 +85,9 @@ function displayModal() {
 
 function setColor() {
   pencilColor = this.className;
+}
+
+function clearCanvas() {
+  canvas.innerHTML = '';
+  createSketch(resolution);
 }
