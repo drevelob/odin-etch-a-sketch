@@ -59,7 +59,7 @@ header {
 /*||MAIN*/
 main {
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1200px;
   padding: 60px;
 }
 
@@ -103,7 +103,7 @@ main {
 .game_container {
   display: flex;
   gap: 20px;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
 /*||CANVAS*/
@@ -132,15 +132,73 @@ ul {
 
 .game_tools {
   align-items: center;
+  backdrop-filter: saturate(200%);
+  background-color: hsla(198, 40%, 80%, 0.2);
   flex-direction: column;
   flex: 1;
   gap: 20px;
+  line-height: 1.6;
+}
+
+.game_icon {
+  align-content: center;
+  color: #ed3;
+  flex: 0.5;
+  font-size: 1.5em;
 }
 
 /*||GRID BUTTON*/
+.game_tools button {
+  border-radius: 8px;
+  border: none;
+  color: #012;
+  cursor: pointer;
+  font: inherit;
+  padding: 3px;
+  width: 80%;
+}
+
 /*||MODAL*/
 .grid_modal {
+  background-color: hsla(213, 72%, 27%, 0.8);
+  border-radius: 8px;
+  border: 3px solid #df1451;
+  color: #f1e5db;
   margin: auto;
+  padding: 10px;
+  width: 300px;
+}
+
+.grid_modal form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grid_modal input {
+  background-color: #243b716d;
+  border-radius: 8px;
+  border: none;
+  color: #f1e5db;
+  font: inherit;
+  padding: 5px;
+  text-align: center;
+}
+
+.grid_modal button {
+  min-width: 100px;
+  width: auto;
+}
+
+/*||INFO*/
+.game_instructions {
+  background-color: #09173648;
+  border-radius: 10px;
+  font-size: 0.8em;
+  padding: 10px;
+  text-align: center;
+  width: 90%;
 }
 
 /*||PENCILS*/
@@ -150,6 +208,8 @@ ul {
   gap: 5px;
   justify-content: center;
   padding: 10px;
+  max-width: 160px;
+  margin-bottom: 40px;
 }
 
 .tool_pencil::before {
