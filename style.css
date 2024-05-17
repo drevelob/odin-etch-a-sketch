@@ -2,6 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap');
 
+/*||VARIABLES*/
+:root {
+  /*Color*/
+  --BGCOL: #001224;
+  --FNCOL: #f9faf8;
+  --LKCOL: #eeff88;
+  --A1COL: #4e1fb2;
+  --A2COL: #f1e5db;
+  --A3COL: #ed3;
+  --A4COL: #ff0370;
+  --OPCOL: hsla(200, 100%, 5%, 0.3);
+  --GDCOL: linear-gradient(90deg,
+      hsl(210, 100%, 7%)0%,
+      hsl(210, 100%, 10%)50%,
+      hsl(210, 100%, 7%)100%);
+}
+
 /*||RESET*/
 *,
 *::before,
@@ -12,13 +29,13 @@
 }
 
 html {
-  background-color: #012;
+  background-color: var(--BGCOL);
   font-size: 10px;
   scroll-behavior: smooth;
 }
 
 body {
-  color: whitesmoke;
+  color: var(--FNCOL);
   font-family: "Jost", sans-serif;
   font-size: clamp(1rem, 2.5vh, 2.5rem);
   line-height: 1.4;
@@ -32,7 +49,7 @@ img {
 }
 
 a:any-link {
-  color: #eeff88;
+  color: var(--LKCOL);
   text-decoration: none;
   font-weight: bold;
 }
@@ -44,8 +61,8 @@ header {
 
 .header_logo {
   align-items: center;
-  background-color: #4e1fb3;
-  color: #eeff88;
+  background-color: var(--A1COL);
+  color: var(--LKCOL);
   display: flex;
   font-weight: 700;
   height: 40px;
@@ -59,6 +76,7 @@ header {
 
 /*||MAIN*/
 main {
+  background: var(--GDCOL);
   margin: 0 auto;
   max-width: 1200px;
   padding: 3.5%;
@@ -79,7 +97,7 @@ main {
 /*||LOGO*/
 .game_logo {
   align-items: center;
-  color: #f1e5db;
+  color: var(--A2COL);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -94,8 +112,8 @@ main {
 }
 
 .logo_title {
-  color: #f1e5db;
-  filter: drop-shadow(2px 2px 30px #eeff88);
+  color: var(--A2COL);
+  filter: drop-shadow(2px 2px 30px var(--LKCOL));
   font-family: "Tilt Neon", sans-serif;
   font-size: 3em;
   font-style: normal;
@@ -103,7 +121,7 @@ main {
 }
 
 .logo_subtitle {
-  color: #ed3;
+  color: var(--A3COL);
   font-size: 2em;
   margin: 0.2em;
 }
@@ -123,7 +141,7 @@ main {
 /*||CANVAS*/
 .game_canvas,
 .game_tools {
-  border: 5px solid #ff0370;
+  border: 5px solid var(--A4COL);
   border-radius: 10px;
   display: flex;
   padding: 5px;
@@ -138,7 +156,7 @@ main {
 }
 
 .canvas_unit {
-  background-color: #f1e5db;
+  background-color: var(--A2COL);
 }
 
 /*||TOOLS*/
@@ -149,7 +167,7 @@ ul {
 .game_tools {
   align-items: center;
   backdrop-filter: saturate(200%);
-  background-color: hsla(198, 40%, 80%, 0.2);
+  background-color: hsla(200, 40%, 80%, 0.2);
   flex-direction: column;
   flex: 1;
   gap: 20px;
@@ -164,7 +182,7 @@ ul {
 
 .game_icon {
   align-content: center;
-  color: #ed3;
+  color: var(--A3COL);
   flex: 0.5;
   font-size: 1.5em;
 }
@@ -173,7 +191,7 @@ ul {
 .game_tools button {
   border-radius: 8px;
   border: none;
-  color: #012;
+  color: var(--BGCOL);
   cursor: pointer;
   font: inherit;
   padding: 3px;
@@ -181,15 +199,15 @@ ul {
 }
 
 .game_tools button:hover {
-  background-color: #ed3;
+  background-color: var(--A3COL);
 }
 
 /*||MODAL*/
 .grid_modal {
-  background-color: hsla(213, 72%, 27%, 0.8);
+  background-color: hsla(210, 70%, 30%, 0.8);
   border-radius: 8px;
-  border: 3px solid #df1451;
-  color: #f1e5db;
+  border: 3px solid var(--A4COL);
+  color: var(--FNCOL);
   margin: auto;
   padding: 10px;
   width: 300px;
@@ -197,7 +215,7 @@ ul {
 
 ::backdrop {
   backdrop-filter: blur(3px);
-  background-color: hsla(210, 100%, 10%, 0.2);
+  background-color: var(--OPCOL);
 }
 
 .grid_modal form {
@@ -208,10 +226,10 @@ ul {
 }
 
 .grid_modal input {
-  background-color: #243b716d;
+  background-color: hsla(210, 50%, 25%, 0.8);
   border-radius: 8px;
   border: none;
-  color: #f1e5db;
+  color: var(--FNCOL);
   font: inherit;
   padding: 5px;
   text-align: center;
@@ -222,7 +240,7 @@ ul {
 }
 
 .grid_modal input::placeholder {
-  color: #f1e5db53;
+  color: hsla(80, 20%, 80%, 0.5);
 }
 
 .grid_modal button {
@@ -238,7 +256,7 @@ ul {
 
 /*||INFO*/
 .game_instructions {
-  background-color: #09173648;
+  background-color: var(--OPCOL);
   border-radius: 10px;
   font-size: 0.8em;
   padding: 10px;
@@ -264,7 +282,7 @@ ul {
 }
 
 li {
-  border: 2px solid #f1e5db;
+  border: 2px solid var(--A2COL);
   cursor: pointer;
   height: 30px;
   width: 30px;
@@ -275,41 +293,41 @@ li:active {
 }
 
 .pencil_black {
-  background-color: #111;
+  background-color: hsl(0, 0%, 10%);
 }
 
 .pencil_purple {
-  background-color: #681ae5;
+  background-color: hsl(250, 80%, 60%);
 }
 
 .pencil_blue {
-  background-color: #1a61e5;
+  background-color: hsl(200, 80%, 60%);
 }
 
 .pencil_red {
-  background-color: #df1451;
+  background-color: hsl(355, 80%, 60%);
 }
 
 .pencil_green {
-  background-color: #1ae590;
+  background-color: hsl(130, 80%, 60%);
 }
 
 .pencil_orange {
-  background-color: #e59e1a;
+  background-color: hsl(25, 80%, 60%);
 }
 
 .pencil_yellow {
-  background-color: #e5e911;
+  background-color: hsl(50, 80%, 60%);
 }
 
 .pencil_pink {
-  background-color: #de60f4;
+  background-color: hsl(300, 80%, 60%);
 }
 
 /*||FOOTER*/
 .footer {
-  color: #f9faf8;
-  background-color: #4e1fb3;
+  color: var(--FNCOL);
+  background-color: var(--A1COL);
   font-family: monospace;
   padding: 20px 30px;
 }
@@ -319,7 +337,7 @@ li:active {
 }
 
 .footer-button {
-  background-color: #4e1fb3;
+  background-color: var(--A1COL);
   border-radius: 5px;
   filter: invert(1);
   padding: 5px
