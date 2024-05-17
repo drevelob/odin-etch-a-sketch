@@ -158,6 +158,10 @@ ul {
   width: 80%;
 }
 
+.game_tools button:hover {
+  background-color: #ed3;
+}
+
 /*||MODAL*/
 .grid_modal {
   background-color: hsla(213, 72%, 27%, 0.8);
@@ -167,6 +171,11 @@ ul {
   margin: auto;
   padding: 10px;
   width: 300px;
+}
+
+::backdrop {
+  backdrop-filter: blur(3px);
+  background-color: hsla(210, 100%, 10%, 0.2);
 }
 
 .grid_modal form {
@@ -186,9 +195,23 @@ ul {
   text-align: center;
 }
 
+.grid_modal input:focus {
+  outline: none;
+}
+
+.grid_modal input::placeholder {
+  color: #f1e5db53;
+}
+
 .grid_modal button {
   min-width: 100px;
   width: auto;
+}
+
+.grid_modal input::-webkit-outer-spin-button,
+.grid_modal input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*||INFO*/
@@ -223,6 +246,10 @@ li {
   cursor: pointer;
   height: 30px;
   width: 30px;
+}
+
+li:active {
+  scale: 1.1;
 }
 
 .pencil_black {
